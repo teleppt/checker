@@ -1,0 +1,15 @@
+В checker-main/bot.py:
+
+1) Рядом с "import checker_core" добавить:
+
+    import integration
+
+2) Рядом со строкой
+    app.add_routes(checker_core.routes)  # /checker/health, /checker/stats, /checker/check, ...
+   добавить сразу следующей строкой:
+
+    app.add_routes(integration.routes)  # /checker/integration/* — мост game-main <-> rp-main
+
+Больше никаких изменений в bot.py не требуется — integration.py ничего не
+подключает к диспетчеру (это только HTTP, без хендлеров бота), поэтому
+дублирования с checker_core.router не будет.

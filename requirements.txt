@@ -1,0 +1,6 @@
+aiogram==3.30.0
+SQLAlchemy==2.0.35
+aiosqlite==0.20.0
+python-dotenv==1.0.1
+aiohttp==3.10.10
+redis==5.0.8
